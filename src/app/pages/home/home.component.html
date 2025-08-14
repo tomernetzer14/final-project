@@ -1,0 +1,52 @@
+<div class="container mt-5">
+  <h1 class="text-3xl font-bold mb-4 text-center">Automated popular science article generation with text simplification</h1>
+
+  <div class="card p-4 mb-5 shadow-sm" dir="ltr" *ngIf="!showApp">
+    <h2 class="h4 mb-3 text-start fw-bold">About the Project</h2>
+    <p class="text-start mb-2">
+      Scientific publications are a vital tool for spreading knowledge, but their complexity often limits accessibility for the general public. As research advances, simplified content becomes increasingly important for informed decision-making in fields like medicine and technology.
+    </p>
+    <p class="text-start mb-4">
+      In this project, we developed an LLM-based system to simplify scientific texts while preserving accuracy and logical flow using Natural Language Processing (NLP) techniques.
+    </p>
+
+    <h3 class="h5 text-start mt-4 fw-bold">What We Did:</h3>
+    <ul class="list-group list-group-flush mb-4">
+      <li class="list-group-item text-start">Selected a T5 model and performed fine-tuning</li>
+      <li class="list-group-item text-start">Created a customized training dataset</li>
+      <li class="list-group-item text-start">Built an automatic preprocessing pipeline</li>
+      <li class="list-group-item text-start">Replaced the attention mechanism and implemented an importance mask</li>
+      <li class="list-group-item text-start">Developed a web application with an intuitive user interface</li>
+    </ul>
+
+    <h3 class="h5 text-start mt-4 fw-bold">Training Details:</h3>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item text-start">Fine-tuned the model using the processed corpus</li>
+      <li class="list-group-item text-start">Training included 8 epochs and took ~40 hours</li>
+      <li class="list-group-item text-start">Real-time metric monitoring with Wandb</li>
+      <li class="list-group-item text-start">Gradual improvement in loss throughout training</li>
+    </ul>
+
+    <div class="text-center mt-4">
+      <img src="assets/pipeline.png" alt="Pipeline Diagram" class="img-fluid shadow-sm" style="max-width: 1200px;">
+    </div>
+
+    <div class="text-center mt-4">
+      <button class="btn btn-primary px-4 py-2" (click)="startApp()">Try the Model</button>
+    </div>
+  </div>
+
+  <div *ngIf="showApp">
+    <app-article-input></app-article-input>
+    <app-language-selector></app-language-selector>
+    <app-metrics-output></app-metrics-output>
+    <app-simplify-process></app-simplify-process>
+    <app-article-output></app-article-output>
+    <app-compare-model-output></app-compare-model-output>
+    <app-footer></app-footer>
+
+    <div class="text-start mb-3">
+      <button class="btn btn-outline-primary" (click)="goBackToIntro()">← Back</button>
+    </div>
+  </div>
+</div>

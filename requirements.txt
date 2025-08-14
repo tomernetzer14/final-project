@@ -1,0 +1,14 @@
+flask
+flask-cors
+torch
+transformers
+sentencepiece
+keybert
+scikit-learn
+spacy
+textstat
+bert-score
+tqdm
+scipy
+sentence-transformers
+pytest

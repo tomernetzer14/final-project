@@ -1,0 +1,24 @@
+<div class="mb-3">
+  <label class="form-label fw-bold d-block text-start" dir="ltr">Choose a file (pdf / txt)</label>
+  <input type="file" class="form-control" (change)="onFileSelected($event)" accept=".pdf,.txt" #fileInput>
+</div>
+
+<div class="mb-4">
+  <label for="articleText" class="form-label fw-bold text-start d-block" dir="ltr">
+    Paste your article here
+  </label>
+  <textarea class="form-control" id="articleText" rows="6"
+          [(ngModel)]="text"
+          [disabled]="isFileUploaded">
+  </textarea>
+  <div class="text-start text-muted small mt-1">
+    Text length: {{ text.split(' ').length }} words
+  </div>
+</div>
+
+<div class="mb-3 d-flex justify-content-between">
+  <button class="btn btn-primary" (click)="onSimplify()">Generate Text</button>
+  <button class="btn btn-outline-secondary" (click)="onClear()">Clear Field</button>
+</div>
+
+<br>

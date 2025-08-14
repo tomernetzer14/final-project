@@ -1,0 +1,31 @@
+<div *ngIf="!hide" class="card mb-4 p-3">
+  <h5 class="card-title text-start" dir="ltr">Generate Settings</h5>
+
+ 
+    <div class="row mb-3">
+      <div [hidden]="true">
+        <div class="col">
+          <label class="form-label d-block text-start" dir="ltr">Select Language</label>
+          <select class="form-select" [(ngModel)]="selectedLanguage" disabled>
+            <option value="he">Hebrew</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+    
+        <small class="text-muted d-block mt-1 text-start">
+          Language selection is currently disabled
+        </small>  
+      </div>
+
+  
+    <br><br>
+
+    <div class="col">
+      <label class="form-label d-block text-start" dir="ltr">Select Display Mode</label>
+      <select class="form-select" [(ngModel)]="selectedAdvanced" (change)="onModeChange()">
+        <option value="basic">Basic</option>
+        <option value="advanced">Advanced (metrics, simplification steps...)</option>
+      </select>
+    </div>
+  </div>
+</div>

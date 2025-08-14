@@ -1,0 +1,17 @@
+<div class="card p-3" *ngIf="simplifiedText">
+
+  <h5 class="card-title text-start">Generated Output</h5>
+
+  <div *ngIf="simplifiedText.includes('Simplifying the text111')" class="d-flex justify-content-center my-4">
+    <img src="assets/proc1.gif" alt="Loading animation" class="loading-gif" style="width: 1200px; height: auto;" />
+  </div>
+
+  <div class="card-text text-start" *ngIf="!simplifiedText.includes('Simplifying the text111')"
+    [innerHTML]="highlightKeywords()" style="white-space: pre-line;">
+  </div>
+  
+  <div class="text-start text-muted small mt-2"
+       *ngIf="!simplifiedText.includes('Simplifying the text111')">
+    Generated text length: {{ simplifiedText.split(' ').length }} words
+  </div>
+</div>

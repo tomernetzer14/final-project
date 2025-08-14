@@ -1,0 +1,12 @@
+<div class="card p-3 mt-3" *ngIf="baselineText">
+  <h5 class="card-title text-start">Baseline Model Output (T5)</h5>
+
+  <p class="card-text text-start" style="white-space: pre-line;">
+    {{ baselineText }}
+  </p>
+
+  <div class="text-start text-muted small mt-2">
+    Output length: {{ baselineText.split(' ').length }} words
+  </div>
+</div>
+<br><br>

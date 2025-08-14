@@ -1,0 +1,27 @@
+<div *ngIf="trace && isAdvanced" class="card p-3 mt-3" dir="ltr">
+  <h5 class="card-title text-start">Simplification Steps:</h5>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngIf="trace.sections">
+      <strong>Section Splitting:</strong> {{ trace.sections }}
+    </li>
+
+    <li class="list-group-item" *ngIf="trace.cleaned">
+      <strong>Text Cleaning:</strong> {{ trace.cleaned }}
+    </li>
+
+    <li class="list-group-item" *ngIf="trace.keywords">
+      <strong>Keywords:</strong>
+      <ul>
+        <li *ngFor="let sec of objectKeys(trace.keywords)">
+          <strong>{{ sec }}:</strong> {{ trace.keywords[sec].join(', ') }}
+        </li>
+      </ul>
+    </li>
+
+    <li class="list-group-item" *ngIf="trace.chunks">
+      <strong>Chunks:</strong> {{ trace.chunks }}
+    </li>
+  </ul>
+</div>
+<br>

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    image: tomernetzer14/article-simplify-backend:latest
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./backend/model:/app/model
+    depends_on:
+      - grobid
+    restart: always
+
+  frontend:
+    image: tomernetzer14/article-simplify-frontend:latest
+    ports:
+      - "80:80"
+    restart: always
+
+  grobid:
+    image: tomernetzer14/article-simplify-grobid:latest
+    ports:
+      - "8070:8070"
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8070/api/isalive"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
