@@ -116,3 +116,7 @@ For support, email tomerne@ac.sce.ac.il
 
 If you have any feedback, please reach out to us at yossiyo2@ac.sce.ac.il
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
