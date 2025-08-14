@@ -23,7 +23,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-   cd article-simplify
+   cd final-project
 ```
 
 Install dependencies
@@ -65,7 +65,7 @@ Start the server
 Go to the project directory
 
 ```bash
-   cd article-simplify
+   cd final-project
 ```
 
 Build the project
